@@ -1,0 +1,29 @@
+{
+    "name": "nieeonliv/advertising",
+    "description": "package for storing advertising configurations on the site",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ermakov Ivan",
+            "email": "nieonliv@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.0",
+        "laravel/passport": "^11.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nieeonliv\\Advertising\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nieeonliv\\Advertising\\Providers\\AdvertisingServiceProvider"
+            ]
+        }
+    }
+}
