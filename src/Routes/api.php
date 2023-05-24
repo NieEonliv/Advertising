@@ -9,7 +9,7 @@ Route::prefix('advertising')->group(function () {
     Route::controller(AdvertisingController::class)->group(function () {
         Route::get('', 'index');
 
-        Route::middleware('scopes:'.AdvertisingScopeEnum::EDIT->value)->group(function () {
+        Route::middleware(['auth:admin','scopes:'.AdvertisingScopeEnum::EDIT->value])->group(function () {
             Route::post('', 'store');
             Route::patch('{advertising}', 'update');
             Route::delete('{advertising}', 'destroy');
@@ -19,7 +19,7 @@ Route::prefix('advertising')->group(function () {
     Route::controller(LinkController::class)->prefix('links')->group(function () {
         Route::get('', 'index');
 
-        Route::middleware('scopes:'.AdvertisingScopeEnum::LINKER->value)->group(function () {
+        Route::middleware(['auth:admin','scopes:'.AdvertisingScopeEnum::LINKER->value])->group(function () {
             Route::post('', 'store');
             Route::patch('{link}', 'update');
             Route::delete('{link}', 'destroy');
