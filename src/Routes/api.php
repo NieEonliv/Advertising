@@ -5,7 +5,7 @@ use Nieeonliv\Advertising\Enums\AdvertisingScopeEnum;
 use Nieeonliv\Advertising\Http\Controllers\AdvertisingController;
 use Nieeonliv\Advertising\Http\Controllers\LinkController;
 
-Route::prefix('advertising')->group(function () {
+Route::prefix('advertising/api')->group(function () {
     Route::controller(AdvertisingController::class)->group(function () {
         Route::get('', 'index');
 
